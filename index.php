@@ -39,12 +39,12 @@
             </form>
 
             <!-- Registro -->
-            <form action = "" class = "formulario__register">
+            <form action = "php/registro_usuario_be.php" method="POST" class = "formulario__register">
                 <h2> Registrarse </h2>
-                <input type = "text" placeholder = "Nombre completo">
-                <input type = "text" placeholder = "Correo Electronico">
-                <input type = "text" placeholder="Usuario">
-                <input type = "password" placeholder="Contraseña">
+                <input type = "text" placeholder = "Nombre completo" name = "nombre_completo">
+                <input type = "text" placeholder = "Correo Electronico" name = "correo">
+                <input type = "text" placeholder="Usuario" name = "usuario">
+                <input type = "password" placeholder="Contraseña" name = "contrasena">
                 <button>Registrarse</button>
             </form>
         </div>

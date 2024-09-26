@@ -1,5 +1,8 @@
+// Accion de Botones
 document.getElementById("btn__registrarse").addEventListener("click", register);
 document.getElementById("btn__iniciar-sesion").addEventListener("click", iniciarSesion);
+
+// Acciona la funcion anchoPagina cuando la ventana cambia de tamaño
 window.addEventListener("resize", anchoPagina);
 
 //Declaracion de variables
@@ -11,7 +14,7 @@ var formulario_register = document.querySelector(".formulario__register");
 var caja_trasera_login = document.querySelector(".caja__trasera-login");
 var caja_trasera_register = document.querySelector(".caja__trasera-register");
 
-function anchoPagina(){
+function anchoPagina(){ //Se encarga de acomodar las cajas cuando se acorta la pagina
     if(window.innerWidth > 850){
         caja_trasera_login.style.display = "block";
         caja_trasera_register.style.display = "block";
@@ -62,4 +65,4 @@ function register(){
 
 }
 
-anchoPagina()
+anchoPagina() //Evita que quede mal la pagina al estar acortada y regarguen la pagina

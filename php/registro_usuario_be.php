@@ -1,6 +1,6 @@
 <?php
 
-    include 'conexion_be.php';
+     include 'conexion_be.php';
     
     $nombre_completo = mysqli_real_escape_string($conexion, $_POST['nombre_completo']);
     $correo = mysqli_real_escape_string($conexion, $_POST['correo']);
@@ -8,7 +8,7 @@
     $contrasena = mysqli_real_escape_string($conexion, $_POST['contrasena']);
 
     //Encriptamiento de contraseña
-    // $contrasena = hash('sha512', $contrasena);
+     $contrasena = hash('sha512', $contrasena);
 
     $query = "INSERT INTO usuarios(nombre_completo, correo, usuario, contrasena)
               VALUES ('$nombre_completo', '$correo', '$usuario', '$contrasena')";

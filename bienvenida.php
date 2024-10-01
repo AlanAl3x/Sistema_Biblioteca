@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+    //SEGURIDAD SI ALGUIEN INTENTA INGRESAR A LA PAGINA SIN USUARIO
     //Si NO existe el usuario...//Manda alerta //Regresa al index
     if(!isset($_SESSION['usuario'])){
         echo '
@@ -12,9 +13,10 @@
         session_destroy(); //Termina la sesion
         die();
     }
+    //session_destroy(); //Termina la sesion
+
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -25,5 +27,6 @@
 </head>
 <body>
     <h1>Bienvenido al server pa</h1>
+    <a href="php/cerrar_sesion.php">Cerrar sesión</a>
 </body>
 </html>

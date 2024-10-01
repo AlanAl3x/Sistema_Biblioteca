@@ -1,3 +1,14 @@
+<?php
+
+    session_start();
+    //SEGURIDAD
+    //Si ya existe el usuario...//Manda a la página de bienvenida
+    if(isset($_SESSION['usuario'])){
+        header("location: bienvenida.php");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +21,12 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head> 
 <body>
-    
     <main>
+        
+        <div class="contenedor__titulo-libreria">
+        <h1>Librería</h1>
+        </div>
+
         <!-- Contenedor de inicio de sesion -->
         <div class="contenedor__todo">
             <div class ="caja__trasera">

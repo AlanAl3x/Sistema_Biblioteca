@@ -21,6 +21,24 @@ main{
     margin-top: 100px;
 }
 
+.contenedor__titulo-libreria {
+    width: 25%; /* Ajusta el ancho del contenedor */
+    max-width: 600px; /* Ancho máximo para pantallas más grandes */
+    margin: 0px auto; /* Centrar el contenedor horizontalmente */
+    backdrop-filter: blur(20px);
+    background-color: rgba(61, 18, 4, 0.5); 
+    
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    border-radius: 20px;
+}
+
+
+.contenedor__titulo-libreria h1 {
+    font-size: 35px; /* Tamaño de la fuente */
+    color: #ffffff; /* Color del texto */
+}
+
 .contenedor__todo{
     width: 100%;
     max-width: 800px;
@@ -53,7 +71,7 @@ main{
 
 .caja__trasera button{ /*Configuracion botones de caja trasera*/
     padding: 10px 40px;
-    border: 2px solid #fff;
+    border: 2px solid #ffffff;
     background: transparent;
     font-size: 14px;
     font-weight: 600;
@@ -148,7 +166,7 @@ border-radius: 20px;
     }
 
     .caja__trasera div{
-        margin 0px;
+        margin: 0px;
         position: absolute;
     }
 
@@ -163,4 +181,7 @@ border-radius: 20px;
     .contenedor__login-register form{
         position: relative;
     }
+
+
+    
 }

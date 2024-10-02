@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-image: url(../img/fondoBienvenida.jpg);
+    background-size: cover;
+    background-position: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+/* ------------------------ Pagina Contenido ------------------------------------------*/
+ .contenedor__inicio-hola{
+    width: 35%; /* Ajusta el ancho del contenedor */
+    max-width: 600px; /* Ancho máximo para pantallas más grandes */
+    margin: 0px auto; /* Centrar el contenedor horizontalmente */
+    backdrop-filter: blur(20px);
+    background-color: rgba(61, 18, 4, 0.5); 
+    
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    border-radius: 20px;
+}
+
+
+.contenedor__inicio-hola h1 {
+    font-size: 35px; /* Tamaño de la fuente */
+    color: #ffffff; /* Color del texto */
+}

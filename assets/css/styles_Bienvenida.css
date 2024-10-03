@@ -38,3 +38,32 @@ main{
     font-size: 35px; /* Tamaño de la fuente */
     color: #ffffff; /* Color del texto */
 }
+
+.contenedor__mensaje-libros{
+    text-align: center;
+    color:  rgb(55, 17, 4);
+}
+
+.contenedor__lista-libros {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    margin-top: 30px
+}
+
+.contenedor__lista-libros div {
+    margin: 10px; 
+    width: 150px; 
+    text-align: center; 
+}
+
+.contenedor__lista-libros img {
+    width: 100%;   /* Cambiado a 100% para que se ajuste al div */
+    height: auto;  /* Mantiene la proporción de la imagen */
+}
+
+
+
+
+
+}

@@ -1,4 +1,7 @@
+
 <?php
+        // Incluir la conexión a la base de datos
+        include 'php/conexion_be.php';
 
     session_start();
     //SEGURIDAD SI ALGUIEN INTENTA INGRESAR A LA PAGINA SIN USUARIO
@@ -15,11 +18,7 @@
     }
     //session_destroy(); //Termina la sesion
 
- // PAGINA BIENVENIDO
-
-        // Incluir la conexión a la base de datos
-        include 'php/conexion_be.php';
-
+         // USUSARIOS
         // Obtener el correo del usuario desde la sesión
         $correo = $_SESSION['usuario'];
 
@@ -37,6 +36,11 @@
             echo "Error al encontrar el nombre de usuario";
         }
 
+        // LIBROS
+        // Consulta para obtener los libros
+        $query_libros = "SELECT * FROM bd_libros";
+        $resultado_libros = mysqli_query($conexion, $query_libros);
+
 ?>
 
 <!DOCTYPE html>
@@ -50,12 +54,37 @@
     <link rel="stylesheet" href="assets/css/styles_Bienvenida.css">
 </head>
 <body>
-    <main> 
+    <main>
         <div class="contenedor__inicio-hola">
-            <h1> Hola <?php print_r($nombre_usuario); ?></h1>
-            </div>
-            
-            <a href="php/cerrar_sesion.php">Cerrar sesión</a>
+            <h1> Hola <?php echo htmlspecialchars($nombre_usuario); ?></h1>
+        </div>
+
+        <div class="contenedor__mensaje-libros">
+            <h2>Libros disponibles</h2>
+        </div>
+
+        <div class="contenedor__lista-libros">
+            <?php
+            // Mostrar los libros obtenidos de la base de datos
+            if ($resultado_libros && mysqli_num_rows($resultado_libros) > 0) {
+                while ($libro = mysqli_fetch_assoc($resultado_libros)) {
+                    echo "<div>";
+                    echo "<h3>" . htmlspecialchars($libro['titulo']) . "</h3>";
+                    echo "<p>Autor: " . htmlspecialchars($libro['autor']) . "</p>";
+                    echo "<p>Precio: $" . htmlspecialchars($libro['precio']) . "</p>";
+                    echo "<img src='assets/img/" . htmlspecialchars($libro['imagen']) . "' alt='" 
+                    . htmlspecialchars($libro['titulo']) . "'>";
+
+                    echo "<button>Añadir a la lista</button>";
+                    echo "</div>";
+                }
+            } else {
+                echo "<p>No hay libros disponibles.</p>";
+            }
+            ?>
+        </div>
+
+        <a href="php/cerrar_sesion.php">Cerrar sesión</a>
     </main>
 </body>
 </html>

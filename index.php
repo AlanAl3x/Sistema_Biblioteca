@@ -4,7 +4,7 @@
     //SEGURIDAD
     //Si ya existe el usuario...//Manda a la página de bienvenida
     if(isset($_SESSION['usuario'])){
-        header("location: bienvenida.php");
+        header("location: menu.php");
     }
 
 ?>

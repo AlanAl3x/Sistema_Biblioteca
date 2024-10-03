@@ -22,7 +22,7 @@
     if(mysqli_num_rows($validar_login) > 0){
         // Guardar el correo del usuario en la sesión
         $_SESSION['usuario'] = $correo;
-        header("location: ../bienvenida.php");
+        header("location: ../menu.php");
         exit;
     }else{
         echo '
